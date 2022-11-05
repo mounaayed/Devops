@@ -27,5 +27,16 @@ pipeline {
   -Dsonar.login=1861dd590df61b8019206aeb5d4b6b39818a4f63"
       	}
     }
+    stage('Build Docker'){
+            steps{
+                sh 'docker build -t mounaayed/devopss .'
+            }
+        }
+        stage('Docker Login'){
+            steps{
+
+                sh 'docker login -u mounaayed -p Twiin2021'
+            }
+        }
        }
       }
