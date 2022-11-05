@@ -13,6 +13,7 @@ pipeline {
     stage('Test mvn') {
             steps {
               sh """ mvn -DskipTests clean package """ 
+               sh """ mvn clean """;
                 sh """ mvn install """;
                 sh """ mvn test """;
             }
