@@ -8,14 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.esprit.examen.entities.Operateur;
 import com.esprit.examen.repositories.OperateurRepository;
-import com.mysql.jdbc.log.Log;
+
 
 import lombok.extern.slf4j.Slf4j;
 
 @Service
 @Slf4j
 public class OperateurServiceImpl implements IOperateurService {
-	//Logger logger = LoggerFactory.getLogger(LoggingController.class);
 
 	@Autowired
 	OperateurRepository  operateurRepository;
