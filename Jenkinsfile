@@ -27,6 +27,11 @@ pipeline {
   -Dsonar.login=1861dd590df61b8019206aeb5d4b6b39818a4f63"
       	}
     }
+    stage('Nexus') {
+      steps {
+        sh 'mvn clean deploy -Dmaven.test.skip=true'
+      }
+    }
     stage('Build Docker'){
             steps{
                 sh 'docker build -t mounaayed/devopss .'

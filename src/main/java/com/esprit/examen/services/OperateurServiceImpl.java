@@ -2,13 +2,20 @@ package com.esprit.examen.services;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.esprit.examen.entities.Operateur;
 import com.esprit.examen.repositories.OperateurRepository;
+import com.mysql.jdbc.log.Log;
+
+import lombok.extern.slf4j.Slf4j;
 
 @Service
+@Slf4j
 public class OperateurServiceImpl implements IOperateurService {
+	//Logger logger = LoggerFactory.getLogger(LoggingController.class);
 
 	@Autowired
 	OperateurRepository  operateurRepository;
@@ -37,7 +44,8 @@ public class OperateurServiceImpl implements IOperateurService {
 
 	@Override
 	public Operateur retrieveOperateur(Long id) {
-		//Long start 
+		Long start  = System.currentTimeMillis();
+		System.out.print("Inmethode retrieve op");
 		Operateur operateur = operateurRepository.findById(id).orElse(null);
 		return operateur;
 	}

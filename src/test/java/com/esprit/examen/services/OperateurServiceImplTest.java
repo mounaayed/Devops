@@ -17,7 +17,7 @@ import com.esprit.examen.entities.Operateur;
 import com.esprit.examen.entities.Stock;
 import com.esprit.examen.repositories.OperateurRepository;
 
-//@RunWith(SpringRunner.class)
+@RunWith(SpringRunner.class)
 @SpringBootTest
 public class OperateurServiceImplTest {
 	
@@ -28,13 +28,13 @@ public class OperateurServiceImplTest {
 	OperateurRepository operateurrepo;
 	
 	@Test
-	public void testAddStock() {
+	public void testRetrieveOperateurBYid() {
 	//	List<Stock> stocks = stockService.retrieveAllStocks();
 	//	int expected=stocks.size();
-		Operateur s = new Operateur(" test","test prenom","pass");
+		Operateur s = new Operateur("test","test prenom","pass");
 		Mockito.when(operateurrepo.findById(Mockito.anyLong()))
 		.thenReturn(Optional.of(s));
-		Operateur savedoperateur= opretateurService.addOperateur(s);
+		//Operateur savedoperateur= opretateurService.addOperateur(s);
 		
 	//	assertEquals(expected+1, stockService.retrieveAllStocks().size());
 		assertNotNull(opretateurService.retrieveOperateur(1l));
