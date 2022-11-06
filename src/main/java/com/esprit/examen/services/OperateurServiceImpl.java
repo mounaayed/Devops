@@ -44,8 +44,9 @@ public class OperateurServiceImpl implements IOperateurService {
 	@Override
 	public Operateur retrieveOperateur(Long id) {
 		
-		Operateur operateur = operateurRepository.findById(id).orElse(null);
-		return operateur;
+		Operateur o = operateurRepository.findById(id).orElse(null);
+		log.info("out of method retrieveStock");
+		return o;
 	}
 
 }
