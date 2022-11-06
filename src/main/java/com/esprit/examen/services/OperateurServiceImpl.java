@@ -36,14 +36,14 @@ public class OperateurServiceImpl implements IOperateurService {
 
 	@Override
 	public Operateur updateOperateur(Operateur o) {
-		operateurRepository.save(o);
-		return o;
+		 return operateurRepository.save(o);
+	
+		
 	}
 
 	@Override
 	public Operateur retrieveOperateur(Long id) {
-		Long start  = System.currentTimeMillis();
-		System.out.print("Inmethode retrieve op");
+		
 		Operateur operateur = operateurRepository.findById(id).orElse(null);
 		return operateur;
 	}
