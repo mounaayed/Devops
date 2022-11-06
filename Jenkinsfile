@@ -18,6 +18,11 @@ pipeline {
                 sh """ mvn test """;
             }
         }
+        stage('JUNIT/MOCKITO') {
+            steps {
+                sh 'mvn test'
+            }
+        }
         stage("MVN SonarQube") {
       
        		steps {
