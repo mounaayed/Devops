@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import com.esprit.examen.entities.Operateur;
 import com.esprit.examen.repositories.OperateurRepository;
 
-import jdk.internal.org.jline.utils.Log;
+
 import lombok.extern.slf4j.Slf4j;
 
 @Service
@@ -44,13 +44,8 @@ public class OperateurServiceImpl implements IOperateurService {
 	@Override
 	public Operateur retrieveOperateur(Long id) {
 		
-		Long start =System.currentTimeMillis();
-		log.info(" in method retrieveStock");
 		Operateur o = operateurRepository.findById(id).orElse(null);
 		log.info("out of method retrieveStock");
-		Long elapsedTine = System.currentTimeMillis() - start;
-		Log.info("Method excution time" + elapsedTine + "millisecond");
-		
 		return o;
 	}
 
