@@ -27,9 +27,9 @@ pipeline {
       
        		steps {
         	  sh "mvn sonar:sonar \
-  -Dsonar.projectKey=Sonarque \
+  -Dsonar.projectKey=Sonarmouna \
   -Dsonar.host.url=http://192.168.1.21:9000 \
-  -Dsonar.login=1861dd590df61b8019206aeb5d4b6b39818a4f63"
+  -Dsonar.login=2a6e823ee81d0de833c5a757f46757f982d3af82"
       	}
     }
     stage('Nexus') {
