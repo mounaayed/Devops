@@ -28,6 +28,11 @@ pipeline {
                 sh 'mvn test'
             }
         }
+        stage('MVN PACKAGE') {
+            steps {
+                sh 'mvn package -DskipTests'
+            }
+        }
         stage("MVN SonarQube") {
       
        		steps {
