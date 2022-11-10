@@ -41,11 +41,11 @@ pipeline {
             steps{
                 sh 'docker build -t mounaayed/devopss .'
             }
-        }
-        stage('Docker Login'){
+     }
+     stage('Docker Login'){
             steps{
-                sh 'docker login -u mounaayed -p Twiin2021'
+               sh 'docker login -u mounaayed -p Twiin2021'
             }
-        }
+     }
        }
       }
