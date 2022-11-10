@@ -44,7 +44,6 @@ pipeline {
         }
         stage('Docker Login'){
             steps{
-
                 sh 'docker login -u mounaayed -p Twiin2021'
             }
         }
